@@ -10,8 +10,13 @@ public class Main {
 
         static void whileMethod(int start, int target){
             int currentYear = start+1;
-
-        while (currentYear < target) {
+            if(start==target){
+                System.out.println("No years have passed.");
+            }
+            else if(start>target){
+                System.out.println("Your start year is after your target year.");
+            }
+            while (currentYear <= target) {
             int difference=currentYear-start;
             if(difference==1){
                 System.out.println(difference + " year has passed");
@@ -25,8 +30,15 @@ public class Main {
     }
 
         static void forMethod(int start, int target){
-            for(int currentYear=target-1;currentYear>start;currentYear--){
-                int difference=target-currentYear;
+            
+            if(start==target){
+                System.out.println("No years have passed.");
+            }
+            else if(start>target){
+                System.out.println("Your start year is after your target year.");
+            }
+            for(int currentYear=target;currentYear>start;currentYear--){
+                int difference=target-currentYear+1;
                 if(difference==1){
                     System.out.println(difference+" year has passed");
                 }
